@@ -4,10 +4,15 @@ namespace ICalculator
 {
     public partial class BadCalculator : Form
     {
+        StringBuilder textViewer = new StringBuilder();
+        decimal number1;
+        decimal number2;
+        decimal number3;
+        decimal number4;
+        decimal result;
         public BadCalculator()
         {
             InitializeComponent();
-            StringBuilder textViewer = new StringBuilder();
             txtViewer.Text = string.Empty;
         }
 
@@ -71,6 +76,47 @@ namespace ICalculator
         private void btnPeriod_Click(object sender, EventArgs e)
         {
             txtViewer.AppendText(btnPeriod.Text);
+        }
+
+        private void btnDeleteDigit_Click(object sender, EventArgs e)
+        {
+            txtViewer.Text = txtViewer.Text.Substring(0, txtViewer.Text.Length - 1);
+
+        }
+
+        private void btnClearRecent_Click(object sender, EventArgs e)
+        {
+            txtViewer.Text = txtViewer.Text.Remove(0);
+        }
+
+        private void btnclearAll_Click(object sender, EventArgs e)
+        {
+            txtViewer.Text = string.Empty;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+           
+            string num1 = txtViewer.Text;
+            txtViewer.Text = string.Empty;
+            decimal.TryParse(num1, out number1);
+        }
+
+        private void btnEquals_Click(object sender, EventArgs e)
+        {
+  
+            string num4 = txtViewer.Text;
+            txtViewer.Text = string.Empty;
+            decimal.TryParse(num4, out number4);
+            if (number1 != null)
+            {
+                Math Add1 = new Math();
+                result = Add1.Add(number1, number4);
+            }
+            string resultString = result.ToString();
+            txtViewer.Text = resultString;
+
+
         }
     }
 }

@@ -13,7 +13,7 @@ namespace ICalculator
         decimal Divide(decimal num1, decimal num2);
         decimal Multiply(decimal num1, decimal num2);
     }
-    class Math : MathFunctions
+     public class Math : MathFunctions
     {
         public decimal Add(decimal num1, decimal num2)
         {

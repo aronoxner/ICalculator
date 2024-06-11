@@ -46,7 +46,7 @@
             btn3 = new Button();
             btnSubtract = new Button();
             btn0 = new Button();
-            btnNumSign = new Button();
+            btnAdd = new Button();
             btnPeriod = new Button();
             btnEquals = new Button();
             txtViewer = new TextBox();
@@ -78,6 +78,7 @@
             btnclearAll.TabIndex = 2;
             btnclearAll.Text = "C";
             btnclearAll.UseVisualStyleBackColor = true;
+            btnclearAll.Click += btnclearAll_Click;
             // 
             // btnClearRecent
             // 
@@ -87,15 +88,17 @@
             btnClearRecent.TabIndex = 3;
             btnClearRecent.Text = "CE";
             btnClearRecent.UseVisualStyleBackColor = true;
+            btnClearRecent.Click += btnClearRecent_Click;
             // 
             // btnDeleteDigit
             // 
-            btnDeleteDigit.Location = new Point(200, 86);
+            btnDeleteDigit.Location = new Point(141, 250);
             btnDeleteDigit.Name = "btnDeleteDigit";
             btnDeleteDigit.Size = new Size(53, 35);
             btnDeleteDigit.TabIndex = 4;
             btnDeleteDigit.Text = "DEL";
             btnDeleteDigit.UseVisualStyleBackColor = true;
+            btnDeleteDigit.Click += btnDeleteDigit_Click;
             // 
             // btn7
             // 
@@ -129,7 +132,7 @@
             // 
             // btnDivide
             // 
-            btnDivide.Location = new Point(200, 127);
+            btnDivide.Location = new Point(200, 209);
             btnDivide.Name = "btnDivide";
             btnDivide.Size = new Size(53, 35);
             btnDivide.TabIndex = 8;
@@ -207,7 +210,7 @@
             // 
             // btnSubtract
             // 
-            btnSubtract.Location = new Point(200, 209);
+            btnSubtract.Location = new Point(200, 127);
             btnSubtract.Name = "btnSubtract";
             btnSubtract.Size = new Size(53, 35);
             btnSubtract.TabIndex = 16;
@@ -224,18 +227,19 @@
             btn0.UseVisualStyleBackColor = true;
             btn0.Click += btn0_Click;
             // 
-            // btnNumSign
+            // btnAdd
             // 
-            btnNumSign.Location = new Point(82, 250);
-            btnNumSign.Name = "btnNumSign";
-            btnNumSign.Size = new Size(53, 35);
-            btnNumSign.TabIndex = 18;
-            btnNumSign.Text = "+/-";
-            btnNumSign.UseVisualStyleBackColor = true;
+            btnAdd.Location = new Point(200, 86);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(53, 35);
+            btnAdd.TabIndex = 18;
+            btnAdd.Text = "+";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnPeriod
             // 
-            btnPeriod.Location = new Point(141, 250);
+            btnPeriod.Location = new Point(82, 250);
             btnPeriod.Name = "btnPeriod";
             btnPeriod.Size = new Size(53, 35);
             btnPeriod.TabIndex = 19;
@@ -251,6 +255,7 @@
             btnEquals.TabIndex = 20;
             btnEquals.Text = "=";
             btnEquals.UseVisualStyleBackColor = true;
+            btnEquals.Click += btnEquals_Click;
             // 
             // txtViewer
             // 
@@ -269,7 +274,7 @@
             Controls.Add(txtViewer);
             Controls.Add(btnEquals);
             Controls.Add(btnPeriod);
-            Controls.Add(btnNumSign);
+            Controls.Add(btnAdd);
             Controls.Add(btn0);
             Controls.Add(btnSubtract);
             Controls.Add(btn3);
@@ -315,7 +320,7 @@
         private Button btn3;
         private Button btnSubtract;
         private Button btn0;
-        private Button btnNumSign;
+        private Button btnAdd;
         private Button btnPeriod;
         private Button btnEquals;
         private TextBox txtViewer;
